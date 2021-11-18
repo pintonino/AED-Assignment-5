@@ -8,28 +8,71 @@ package Business;
 
 import Business.Customer.CustomerDirectory;
 import Business.DeliveryMan.DeliveryManDirectory;
-import Business.Restaurant.RestaurantDirectory;
+import Business.Enterprise.EnterpriseDirectory;
 import Business.Role.Role;
 import Business.Role.SystemAdminRole;
 import java.util.ArrayList;
 
 /**
  *
- * @author MyPC1
+ * @author ninoshka
  */
 public class EcoSystem extends Organization{
-    
-    private static EcoSystem business;
-    private RestaurantDirectory restaurantDirectory;
+    // at any time there should be only one system obj present in the app
+    private static EcoSystem business; 
+    private EnterpriseDirectory enterpriseDirectory;
     private CustomerDirectory customerDirectory;
     private DeliveryManDirectory deliveryManDirectory;
+    private OrderDirectory orderDirectory;   
+      
+    private EcoSystem(){
+       super(null);
+       enterpriseDirectory = new EnterpriseDirectory();
+       customerDirectory = new CustomerDirectory();
+       deliveryManDirectory = new DeliveryManDirectory();
+       orderDirectory = new OrderDirectory();
+    }
 
-    public EcoSystem(RestaurantDirectory restaurantDirectory, CustomerDirectory customerDirectory, DeliveryManDirectory deliveryManDirectory) {
+    public OrderDirectory getOrderDirectory() {
+        return orderDirectory;
+    }
 
-        this.restaurantDirectory = restaurantDirectory;
+    public void setOrderDirectory(OrderDirectory orderDirectory) {
+        this.orderDirectory = orderDirectory;
+    }
+
+    public static EcoSystem getBusiness() {
+        return business;
+    }
+
+    public CustomerDirectory getCustomerDirectory() {
+        return customerDirectory;
+    }
+
+    public void setCustomerDirectory(CustomerDirectory customerDirectory) {
         this.customerDirectory = customerDirectory;
+    }
+
+    public DeliveryManDirectory getDeliveryManDirectory() {
+        return deliveryManDirectory;
+    }
+
+    public void setDeliveryManDirectory(DeliveryManDirectory deliveryManDirectory) {
         this.deliveryManDirectory = deliveryManDirectory;
     }
+
+    public static void setBusiness(EcoSystem business) {
+        EcoSystem.business = business;
+    }
+
+    public EnterpriseDirectory getEnterpriseDirectory() {
+        return enterpriseDirectory;
+    }
+
+    public void setEnterpriseDirectory(EnterpriseDirectory enterpriseDirectory) {
+        this.enterpriseDirectory = enterpriseDirectory;
+    }
+    
     
     public static EcoSystem getInstance(){
         if(business==null){
@@ -44,11 +87,6 @@ public class EcoSystem extends Organization{
         roleList.add(new SystemAdminRole());
         return roleList;
     }
-    private EcoSystem(){
-        super(null);
-       // networkList=new ArrayList<Network>();
-    }
-
     
     public boolean checkIfUserIsUnique(String userName){
        //
