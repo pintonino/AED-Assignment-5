@@ -79,10 +79,10 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
         txtPassword = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(153, 153, 153));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        btnSave.setBackground(new java.awt.Color(255, 153, 0));
+        btnSave.setBackground(new java.awt.Color(255, 255, 255));
         btnSave.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnSave.setText("Save");
         btnSave.addActionListener(new java.awt.event.ActionListener() {
@@ -90,14 +90,14 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
                 btnSaveActionPerformed(evt);
             }
         });
-        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 320, 144, 37));
+        add(btnSave, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 120, 37));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("View/Update Manager");
-        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 450, -1));
+        add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 450, -1));
 
-        btnUpdate.setBackground(new java.awt.Color(255, 153, 0));
+        btnUpdate.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdate.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
@@ -105,45 +105,45 @@ public class UpdateUserJPanel extends javax.swing.JPanel {
                 btnUpdateActionPerformed(evt);
             }
         });
-        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 144, 37));
+        add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 120, 37));
 
         passwordLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         passwordLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         passwordLabel.setText("Password");
-        add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 230, -1, -1));
+        add(passwordLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
 
         UsrNameLabel.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         UsrNameLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         UsrNameLabel.setText("UserName");
-        add(UsrNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 190, 70, 20));
+        add(UsrNameLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 140, 70, 20));
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Employee ID");
-        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 150, 130, -1));
-        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 190, 170, -1));
+        jLabel3.setText("Employee Id");
+        add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 130, -1));
+        add(txtUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 170, -1));
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Employee Name");
-        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 270, -1, -1));
-        add(txtEmployeeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 170, -1));
+        add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, -1, -1));
+        add(txtEmployeeName, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 170, -1));
 
         txtEmployeeId.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmployeeIdActionPerformed(evt);
             }
         });
-        add(txtEmployeeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 170, -1));
+        add(txtEmployeeId, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 100, 170, -1));
 
         txtPassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtPasswordActionPerformed(evt);
             }
         });
-        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 230, 170, -1));
+        add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 180, 170, -1));
 
-        btnBack.setBackground(new java.awt.Color(255, 153, 0));
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setText("<- Back");
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

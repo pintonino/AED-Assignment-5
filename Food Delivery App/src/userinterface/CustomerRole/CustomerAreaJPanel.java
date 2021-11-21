@@ -5,38 +5,45 @@
 package userinterface.CustomerRole;
 
 import Business.EcoSystem;
+import Business.Enterprise.Enterprise;
+import Business.Enterprise.Items;
+import Business.Organization;
 
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.LabTestWorkRequest;
 import Business.WorkQueue.WorkRequest;
 import java.awt.CardLayout;
+import javax.swing.DefaultComboBoxModel;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author raunak
+ * @author ninoshka
  */
 public class CustomerAreaJPanel extends javax.swing.JPanel {
 
     private JPanel userProcessContainer;
 
     private UserAccount userAccount;
-    /**
-     * Creates new form DoctorWorkAreaJPanel
-     */
-    public CustomerAreaJPanel(JPanel userProcessContainer, UserAccount account) {
+    private EcoSystem business;
+    private Enterprise enterprise;
+    private Organization organization;
+    
+    public CustomerAreaJPanel(JPanel userProcessContainer, 
+            UserAccount account, 
+            Organization organization, 
+            Enterprise enterprise, 
+            EcoSystem business) {
         initComponents();
         
         this.userProcessContainer = userProcessContainer;
-      
+      this.enterprise=enterprise;
         this.userAccount = account;
-        //valueLabel.setText(enterprise.getName());
-        populateRequestTable();
+       this.business=business;
+       this.organization=organization;
     }
     
-    public void populateRequestTable(){
-        
-    }
 
     
     /**
@@ -48,123 +55,88 @@ public class CustomerAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        workRequestJTable = new javax.swing.JTable();
-        requestTestJButton = new javax.swing.JButton();
-        refreshTestJButton = new javax.swing.JButton();
-        enterpriseLabel = new javax.swing.JLabel();
-        valueLabel = new javax.swing.JLabel();
+        btnPlaceOrder = new javax.swing.JButton();
+        btnTrackOrders = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
-        workRequestJTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Message", "Receiver", "Status", "Result"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
+        setBackground(new java.awt.Color(153, 153, 153));
 
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(workRequestJTable);
-        if (workRequestJTable.getColumnModel().getColumnCount() > 0) {
-            workRequestJTable.getColumnModel().getColumn(0).setResizable(false);
-            workRequestJTable.getColumnModel().getColumn(1).setResizable(false);
-            workRequestJTable.getColumnModel().getColumn(2).setResizable(false);
-            workRequestJTable.getColumnModel().getColumn(3).setResizable(false);
-        }
-
-        requestTestJButton.setText("Request Test");
-        requestTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnPlaceOrder.setBackground(new java.awt.Color(255, 255, 255));
+        btnPlaceOrder.setText("Place new order");
+        btnPlaceOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                requestTestJButtonActionPerformed(evt);
+                btnPlaceOrderActionPerformed(evt);
             }
         });
 
-        refreshTestJButton.setText("Refresh");
-        refreshTestJButton.addActionListener(new java.awt.event.ActionListener() {
+        btnTrackOrders.setBackground(new java.awt.Color(255, 255, 255));
+        btnTrackOrders.setText("Track Orders");
+        btnTrackOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                refreshTestJButtonActionPerformed(evt);
+                btnTrackOrdersActionPerformed(evt);
             }
         });
 
-        enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        enterpriseLabel.setText("EnterPrise :");
-
-        valueLabel.setText("<value>");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        jLabel1.setText("Customer Work Area");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(179, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(165, 165, 165))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(requestTestJButton)
-                        .addGap(86, 86, 86))))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(refreshTestJButton)
-                .addGap(103, 103, 103))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(btnPlaceOrder)
+                        .addGap(45, 45, 45)
+                        .addComponent(btnTrackOrders, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(205, 205, 205)
+                        .addComponent(jLabel1)))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(valueLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(refreshTestJButton)
-                        .addComponent(enterpriseLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(45, 45, 45)
-                .addComponent(requestTestJButton)
-                .addContainerGap(202, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(94, 94, 94)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnPlaceOrder, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                    .addComponent(btnTrackOrders, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(260, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void requestTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_requestTestJButtonActionPerformed
+    private void btnPlaceOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPlaceOrderActionPerformed
+        // TODO add your handling code here:
+          PlaceOrderJPanel panel = new PlaceOrderJPanel(userProcessContainer, 
+           userAccount,
+                  organization,
+            enterprise, 
+            business);
+        userProcessContainer.add("PlaceOrderJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
         
-        
-        
-    }//GEN-LAST:event_requestTestJButtonActionPerformed
+    }//GEN-LAST:event_btnPlaceOrderActionPerformed
 
-    private void refreshTestJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshTestJButtonActionPerformed
-
-        populateRequestTable();
-        
-    }//GEN-LAST:event_refreshTestJButtonActionPerformed
+    private void btnTrackOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTrackOrdersActionPerformed
+        // TODO add your handling code here:
+          TrackOrderJPanel panel = new TrackOrderJPanel(userProcessContainer, 
+           userAccount,
+                  organization,
+            enterprise, 
+            business);
+        userProcessContainer.add("CancelOrderJPanel", panel);
+        CardLayout layout = (CardLayout) userProcessContainer.getLayout();
+        layout.next(userProcessContainer);
+    }//GEN-LAST:event_btnTrackOrdersActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel enterpriseLabel;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JButton refreshTestJButton;
-    private javax.swing.JButton requestTestJButton;
-    private javax.swing.JLabel valueLabel;
-    private javax.swing.JTable workRequestJTable;
+    private javax.swing.JButton btnPlaceOrder;
+    private javax.swing.JButton btnTrackOrders;
+    private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }

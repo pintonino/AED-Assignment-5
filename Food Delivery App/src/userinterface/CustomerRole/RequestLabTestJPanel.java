@@ -7,6 +7,7 @@ package userinterface.CustomerRole;
 import Business.EcoSystem;
 import Business.Organization;
 import Business.UserAccount.UserAccount;
+import Business.WorkQueue.LabTestWorkRequest;
 import java.awt.CardLayout;
 import java.awt.Component;
 import java.util.logging.Level;
@@ -15,7 +16,7 @@ import javax.swing.JPanel;
 
 /**
  *
- * @author raunak
+ * @author ninoshka
  */
 public class RequestLabTestJPanel extends javax.swing.JPanel {
 
@@ -58,7 +59,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
                 requestTestJButtonActionPerformed(evt);
             }
         });
-        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(215, 95, -1, -1));
+        add(requestTestJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 130, -1, -1));
 
         jLabel1.setText("Message");
         add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(96, 40, -1, -1));
@@ -70,10 +71,10 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
                 backJButtonActionPerformed(evt);
             }
         });
-        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(69, 138, -1, -1));
+        add(backJButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
 
         valueLabel.setText("<value>");
-        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 130, -1));
+        add(valueLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 0, 130, -1));
 
         enterpriseLabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         enterpriseLabel.setText("EnterPrise :");
@@ -92,7 +93,7 @@ public class RequestLabTestJPanel extends javax.swing.JPanel {
         Component[] componentArray = userProcessContainer.getComponents();
         Component component = componentArray[componentArray.length - 1];
         CustomerAreaJPanel dwjp = (CustomerAreaJPanel) component;
-        dwjp.populateRequestTable();
+       // dwjp.populateRequestTable();
         CardLayout layout = (CardLayout)userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
         

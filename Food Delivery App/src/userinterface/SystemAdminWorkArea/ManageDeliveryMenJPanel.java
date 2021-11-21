@@ -62,14 +62,14 @@ public void populateTable1(){
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tblDeliveryMenList = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        btnCreate = new javax.swing.JButton();
+        btnCreateDeliveryMan = new javax.swing.JButton();
         btnUpdateDeliveryMan = new javax.swing.JButton();
-        btnDelete = new javax.swing.JButton();
+        btnDeleteDeliveryMan = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
+        refreshJButton = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(255, 255, 255));
+        setBackground(new java.awt.Color(153, 153, 153));
 
         tblDeliveryMenList.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -89,39 +89,35 @@ public void populateTable1(){
         });
         jScrollPane1.setViewportView(tblDeliveryMenList);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Delivery Men List");
-
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Manage Delivery Men");
 
-        btnCreate.setBackground(new java.awt.Color(255, 153, 0));
-        btnCreate.setText("Create New Delivery Man");
-        btnCreate.addActionListener(new java.awt.event.ActionListener() {
+        btnCreateDeliveryMan.setBackground(new java.awt.Color(255, 255, 255));
+        btnCreateDeliveryMan.setText("Add");
+        btnCreateDeliveryMan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateActionPerformed(evt);
+                btnCreateDeliveryManActionPerformed(evt);
             }
         });
 
-        btnUpdateDeliveryMan.setBackground(new java.awt.Color(255, 153, 0));
-        btnUpdateDeliveryMan.setText("Update Delivery Men");
+        btnUpdateDeliveryMan.setBackground(new java.awt.Color(255, 255, 255));
+        btnUpdateDeliveryMan.setText("Update");
         btnUpdateDeliveryMan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnUpdateDeliveryManActionPerformed(evt);
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(255, 153, 0));
-        btnDelete.setText("Delete Delivery Men");
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+        btnDeleteDeliveryMan.setBackground(new java.awt.Color(255, 255, 255));
+        btnDeleteDeliveryMan.setText("Delete");
+        btnDeleteDeliveryMan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
+                btnDeleteDeliveryManActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 153, 0));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setText("<- Back");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,64 +125,67 @@ public void populateTable1(){
             }
         });
 
+        refreshJButton.setBackground(new java.awt.Color(255, 255, 255));
+        refreshJButton.setText("Refresh");
+        refreshJButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshJButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jButton1)
-                .addGap(749, 749, 749))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(136, 136, 136)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(51, 51, 51)
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 470, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(refreshJButton))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(62, 62, 62)
-                                .addComponent(btnUpdateDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(53, 53, 53)
-                                .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)
-                                .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
+                        .addGap(116, 116, 116)
+                        .addComponent(btnCreateDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55)
+                        .addComponent(btnDeleteDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(44, 44, 44)
+                        .addComponent(btnUpdateDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 690, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addComponent(jButton1)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel1)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(156, 156, 156)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(btnUpdateDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(243, 243, 243))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(refreshJButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(49, 49, 49)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnDeleteDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCreateDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnUpdateDeliveryMan, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(196, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateActionPerformed
+    private void btnCreateDeliveryManActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDeliveryManActionPerformed
         // TODO add your handling code here:
           CreateNewDeliveryManJPanel panel = new CreateNewDeliveryManJPanel(userProcessContainer,ecosystem,deliverManOrg);
         userProcessContainer.add("CreateNewDeliveryManJPanel", panel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);
 
-    }//GEN-LAST:event_btnCreateActionPerformed
+    }//GEN-LAST:event_btnCreateDeliveryManActionPerformed
 
     private void btnUpdateDeliveryManActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnUpdateDeliveryManActionPerformed
         // TODO add your handling code here:
@@ -204,7 +203,7 @@ public void populateTable1(){
         }
     }//GEN-LAST:event_btnUpdateDeliveryManActionPerformed
 
-    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
+    private void btnDeleteDeliveryManActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteDeliveryManActionPerformed
         // TODO add your handling code here:
         int selectedRow = tblDeliveryMenList.getSelectedRow();
         if (selectedRow < 0) {
@@ -217,7 +216,7 @@ public void populateTable1(){
             deliverManOrg.getEmployeeDirectory().deleteEmployee(ua.getEmployee());
         JOptionPane.showMessageDialog(null, "User Account deleted successfully");
     } 
-    }//GEN-LAST:event_btnDeleteActionPerformed
+    }//GEN-LAST:event_btnDeleteDeliveryManActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -235,15 +234,19 @@ public void populateTable1(){
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void refreshJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshJButtonActionPerformed
+        populateTable1();
+    }//GEN-LAST:event_refreshJButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnCreate;
-    private javax.swing.JButton btnDelete;
+    private javax.swing.JButton btnCreateDeliveryMan;
+    private javax.swing.JButton btnDeleteDeliveryMan;
     private javax.swing.JButton btnUpdateDeliveryMan;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton refreshJButton;
     private javax.swing.JTable tblDeliveryMenList;
     // End of variables declaration//GEN-END:variables
 }
