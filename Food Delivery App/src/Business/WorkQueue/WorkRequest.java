@@ -9,7 +9,7 @@ import java.util.Date;
 
 /**
  *
- * @author raunak
+ * @author ninoshka
  */
 public abstract class WorkRequest {
 

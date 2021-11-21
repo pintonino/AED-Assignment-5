@@ -5,10 +5,30 @@
  */
 package Business.Restaurant;
 
+import Business.Enterprise.Items;
+import Business.Organization;
+import Business.Role.RestaurantAdminRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
- * @author harold
+ * @author ninoshka
  */
-public class Restaurant {
+public class Restaurant  extends Organization{
     
+    private ArrayList<Items> itemsList;
+    
+    
+    public Restaurant() {
+        super(Organization.Type.RestaurantAdmin.getValue());
+    }
+    
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new RestaurantAdminRole());
+        return roles;
+    }
+
 }

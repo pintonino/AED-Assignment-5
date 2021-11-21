@@ -5,10 +5,26 @@
  */
 package Business.DeliveryMan;
 
+import Business.Organization;
+import Business.Role.DeliveryManRole;
+import Business.Role.Role;
+import java.util.ArrayList;
+
 /**
  *
- * @author harold
+ * @author ninoshka
  */
-public class DeliveryMan {
+public class DeliveryMan extends Organization{
+
+    public DeliveryMan() {
+        super(Organization.Type.DeliveryMan.getValue());
+    }
     
+    @Override
+    public ArrayList<Role> getSupportedRole() {
+        ArrayList<Role> roles = new ArrayList();
+        roles.add(new DeliveryManRole());
+        return roles;
+    }
+  
 }

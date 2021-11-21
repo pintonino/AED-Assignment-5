@@ -3,10 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Business.Customer;
+package Business.Enterprise;
 
-import Business.Organization;
-import Business.Role.CustomerRole;
 import Business.Role.Role;
 import java.util.ArrayList;
 
@@ -14,15 +12,19 @@ import java.util.ArrayList;
  *
  * @author ninoshka
  */
-public class Customer extends Organization {
-      public Customer() {
-        super(Organization.Type.Customer.getValue());
-    }
+public class RestaurantEnterprise extends Enterprise {
     
+   
+   
+   public RestaurantEnterprise(String name,String address){
+        super(name,address,EnterpriseType.Restaurant);
+        
+    }
+
+   
     @Override
     public ArrayList<Role> getSupportedRole() {
-        ArrayList<Role> roles = new ArrayList();
-        roles.add(new CustomerRole());
-        return roles;
-    }
+        return null;
+}
+    
 }
