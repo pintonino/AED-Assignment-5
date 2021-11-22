@@ -210,7 +210,11 @@ public class TrackOrderJPanel extends javax.swing.JPanel {
             return;
         }
         else{
-        Order o = (Order)CurrentOrdersTable.getValueAt(selectedRow,0 );        
+        Order o = (Order)CurrentOrdersTable.getValueAt(selectedRow,0 );  
+        if(o.getStatus().equalsIgnoreCase("cancelled")){
+            JOptionPane.showMessageDialog(null, "You cannot cancel a delivered order");
+            return;
+        }
         business.getOrderDirectory().deleteOrder(o);
         JOptionPane.showMessageDialog(null, "Order deleted successfully");
        populateCurrentOrdersTable();

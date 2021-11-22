@@ -223,7 +223,7 @@ public class CreateNewCustomerJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnCreateActionPerformed
    
     private boolean verifyUserName(){
-        Pattern p=Pattern.compile("^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
+        Pattern p=Pattern.compile("^[a-zA-Z0-9]+_[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+$");
         Matcher m=p.matcher(txtUserName.getText());
         boolean b=m.matches();
         return b;

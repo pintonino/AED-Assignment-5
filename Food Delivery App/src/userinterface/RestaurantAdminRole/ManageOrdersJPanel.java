@@ -206,7 +206,10 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
         }
         
         Order order1 = (Order)orderRequestJTable.getValueAt(selectedRow, 0);
-         if(order1.getStatus().equals("delivered")||order1.getStatus().equals("order placed")){
+        if((order1.getStatus().equalsIgnoreCase("cancelled"))){
+            JOptionPane.showMessageDialog(null, "Cancelled orders cannot be assigned a delivery man");
+         return ; }
+         if(order1.getStatus().equals("delivered")){
             JOptionPane.showMessageDialog(null, "This order has already been delivered");
          return ; }
          if(!order1.getStatus().equals("accepted")){
@@ -225,7 +228,7 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
             return;
         }        
         Order order1 = (Order)orderRequestJTable.getValueAt(selectedRow, 0);
-        if(!(order1.getStatus().equalsIgnoreCase("cancelled"))){
+        if((order1.getStatus().equalsIgnoreCase("cancelled"))){
             JOptionPane.showMessageDialog(null, "Cancelled orders cannot be accepted");
          return ; }
          if(!(order1.getStatus().equals("order placed"))){
