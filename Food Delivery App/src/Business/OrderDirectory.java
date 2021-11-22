@@ -33,6 +33,6 @@ public class OrderDirectory {
     }
      
       public void deleteOrder(Order order){
-        orderList.remove(order); 
+        order.setStatus("Cancelled");
     }
 }

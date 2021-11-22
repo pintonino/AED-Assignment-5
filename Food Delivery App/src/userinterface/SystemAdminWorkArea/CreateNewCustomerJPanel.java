@@ -200,20 +200,14 @@ public class CreateNewCustomerJPanel extends javax.swing.JPanel {
     if (verifyUserName()==false){
         UsrNameLabel.setForeground (Color.red);
         txtUserName.setBorder(BorderFactory.createLineBorder(Color.RED));
-        JOptionPane.showMessageDialog(null, "Username should be in the format of xx_xx@xx.xx");
+        JOptionPane.showMessageDialog(null, "Please enter a valid email address");
         return;
-    } else{
-        UsrNameLabel.setForeground (Color.BLACK);
-        txtUserName.setBorder(BorderFactory.createLineBorder(Color.black));
     }
     if (passwordPatternCorrect()==false){
         passwordLabel.setForeground (Color.red);
         txtPassword.setBorder(BorderFactory.createLineBorder(Color.RED));
-        JOptionPane.showMessageDialog(null, "Password should be at least 6 digits and contain at least one upper case letter, one lower case letter, one digit and one special character $, *, # or &.");
+        JOptionPane.showMessageDialog(null, "Please atleast 6 charact long password.");
         return;
-    }else{
-        passwordLabel.setForeground (Color.BLACK);
-        txtPassword.setBorder(BorderFactory.createLineBorder(Color.black));
     }
     String employeeName=txtEmployeeName.getText();
     String userName=txtUserName.getText();

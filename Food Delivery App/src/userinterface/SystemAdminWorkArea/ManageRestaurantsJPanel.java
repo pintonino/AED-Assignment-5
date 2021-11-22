@@ -397,7 +397,6 @@ public class ManageRestaurantsJPanel extends javax.swing.JPanel {
                systemAdminWorkAreaJPanel.populateTree(); 
             }
         }
-        layout.previous(userProcessContainer);
     }//GEN-LAST:event_btnBackActionPerformed
 
     private void btnDeleteRestaurantActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteRestaurantActionPerformed

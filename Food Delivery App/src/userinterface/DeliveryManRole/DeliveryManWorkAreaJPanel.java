@@ -50,7 +50,7 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
            DefaultTableModel dtm = (DefaultTableModel) workRequestJTable.getModel();
         dtm.setRowCount(0);
         for(Order order:business.getOrderDirectory().getOrderList()) {
-  if(order.getDeliveryManName()!=null && order.getDeliveryManName().equals(userAccount.getEmployee().getName())){
+        if(order.getDeliveryManName()!=null && order.getDeliveryManName().equals(userAccount.getEmployee().getName())){
             Object row[] = new Object[6];
             row[0] = order;
             row[1] = order.getCustomerId();
@@ -140,17 +140,13 @@ public class DeliveryManWorkAreaJPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void processJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processJButtonActionPerformed
-        
-        int selectedRow = workRequestJTable.getSelectedRow();
-        
+        int selectedRow = workRequestJTable.getSelectedRow();        
         if (selectedRow < 0){
             return;
-        }
-        
+        }        
         Order order1 = (Order)workRequestJTable.getValueAt(selectedRow, 0);
-        order1.setStatus("delivered");
-         
-            JOptionPane.showMessageDialog(null, "This order is delivered successfully");
+        order1.setStatus("delivered");         
+        JOptionPane.showMessageDialog(null, "This order is delivered successfully");
         
     }//GEN-LAST:event_processJButtonActionPerformed
 

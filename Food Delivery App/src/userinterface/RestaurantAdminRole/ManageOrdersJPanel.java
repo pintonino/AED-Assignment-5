@@ -220,20 +220,19 @@ public class ManageOrdersJPanel extends javax.swing.JPanel {
 
     private void AcceptOrderBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcceptOrderBtnActionPerformed
         // TODO add your handling code here:
-        int selectedRow = orderRequestJTable.getSelectedRow();
-        
+        int selectedRow = orderRequestJTable.getSelectedRow();        
         if (selectedRow < 0){
             return;
-        }
-        
+        }        
         Order order1 = (Order)orderRequestJTable.getValueAt(selectedRow, 0);
+        if(!(order1.getStatus().equalsIgnoreCase("cancelled"))){
+            JOptionPane.showMessageDialog(null, "Cancelled orders cannot be accepted");
+         return ; }
          if(!(order1.getStatus().equals("order placed"))){
             JOptionPane.showMessageDialog(null, "This order is already accepted");
-         return ; }
-         
+         return ; }         
          order1.setStatus("accepted");
-         
-            JOptionPane.showMessageDialog(null, "Order accepted successfully");
+         JOptionPane.showMessageDialog(null, "Order accepted successfully");
     }//GEN-LAST:event_AcceptOrderBtnActionPerformed
 
     private void btnBackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBackActionPerformed

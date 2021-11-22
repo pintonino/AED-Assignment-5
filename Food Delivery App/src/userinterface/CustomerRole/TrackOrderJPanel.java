@@ -46,7 +46,7 @@ public class TrackOrderJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
         for(Order o:business.getOrderDirectory().getOrderList())
         {
-         if(o.getCustomerUserName()!=null&&o.getCustomerUserName().equals(userAccount.getUsername()) && !(o.getStatus().equals("order received")))
+         if(o.getCustomerUserName()!=null&&o.getCustomerUserName().equals(userAccount.getUsername()) && (!o.getStatus().equalsIgnoreCase("cancelled")) && !(o.getStatus().equals("order received")))
          {
             Object row[] = new Object[5];
             row[0] = o;
@@ -65,7 +65,7 @@ public class TrackOrderJPanel extends javax.swing.JPanel {
         dtm.setRowCount(0);
         for(Order o:business.getOrderDirectory().getOrderList())
         {
-         if(o.getCustomerUserName()!=null&&o.getCustomerUserName().equals(userAccount.getUsername()) && o.getStatus().equals("order received"))
+         if(o.getCustomerUserName()!=null&&o.getCustomerUserName().equals(userAccount.getUsername()) && (o.getStatus().equals("order received") || o.getStatus().equalsIgnoreCase("cancelled") ))
          {
             Object row[] = new Object[5];
             row[0] = o;
